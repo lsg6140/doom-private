@@ -282,13 +282,25 @@
       ))
 
 (map! :leader
-      (:prefix-map ("z" . "fzf")
+      (:prefix ("z" . "zoxide/fzf")
         :desc "fzf-directory"     "d" #'fzf-directory
-        :desc "fzf-git-files"     "f" #'fzf-directory
-        :desc "fzf-git-grep"      "z" #'fzf-git-grep
         :desc "fzf-grep"          "g" #'fzf-grep
+        :desc "fzf-git-grep"      "G" #'fzf-git-grep
         :desc "fzf-switch-buffer" "b" #'fzf-switch-buffer
       ))
+
+  (map! :leader
+        (:prefix ("z" . "zoxide/fzf")
+          :desc "zoxide-add"                    "a" #'zoxide-add
+          :desc "zoxide-cd"                     "c" #'zoxide-cd
+          :desc "zoxide-find-file"              "f" #'zoxide-find-file
+          :desc "zoxide-travel"                 "t" #'zoxide-travel
+          :desc "zoxide-remove"                 "x" #'zoxide-remove
+          :desc "zoxide-add-with-query"         "A" #'zoxide-add-with-query
+          :desc "zoxide-cd-with-query"          "C" #'zoxide-cd-with-query
+          :desc "zoxide-find-file-with-query"   "F" #'zoxide-find-file-with-query
+          :desc "zoxide-travel-with-query"      "T" #'zoxide-travel-with-query
+        ))
 
 (use-package! dired-hide-dotfiles
   :after dired

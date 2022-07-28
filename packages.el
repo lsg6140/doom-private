@@ -63,6 +63,8 @@
 
 (package! rg)
 
+(package! zoxide)
+
 (package! dired-hide-dotfiles)
 
 (package! dired-ranger)
