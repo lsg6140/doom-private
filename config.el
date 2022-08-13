@@ -325,8 +325,22 @@
 
 (setq which-key-idle-delay 0.1)
 
+(use-package! vterm
+  :bind
+    ("C-c C-j" . vterm-send-C-j)
+    ("C-c C-k" . vterm-send-C-k)
+)
+
+(map! :after vterm
+      :map vterm-mode-map
+      :ni "C-j" #'vterm-send-down
+      :ni "C-k" #'vterm-send-up
+      :ni "C-r" #'vterm-send-C-r
+      :ni "C-t" #'vterm-send-C-t
+      )
+
 (map! :leader
-      "r" #'counsel-rg
-      ">" #'counsel-fzf
+      "r" #'rg-menu
+      ">" #'fzf-directory
       "d" #'dired-jump
       )
