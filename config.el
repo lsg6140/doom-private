@@ -339,6 +339,13 @@
       :ni "C-t" #'vterm-send-C-t
       )
 
+(after! persp-mode
+  (setq persp-emacsclient-init-frame-behaviour-override "main"))
+
+(after! persp-mode
+  (setq persp-interactive-init-frame-behaviour-override "main")
+  (setq persp-init-new-frame-behaviour-override "main"))
+
 (map! :leader
       "r" #'rg-menu
       ">" #'fzf-directory

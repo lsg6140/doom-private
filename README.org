@@ -1020,6 +1020,27 @@ https://github.com/Vonfry/zoxide.el
 
 #+end_src
 
+*** workspace
+
+No new workspace will be created by the command 'emacsclient -c'.
+https://github.com/doomemacs/doomemacs/issues/1949
+
+#+begin_src emacs-lisp
+
+(after! persp-mode
+  (setq persp-emacsclient-init-frame-behaviour-override "main"))
+
+#+end_src
+
+
+#+begin_src emacs-lisp
+
+(after! persp-mode
+  (setq persp-interactive-init-frame-behaviour-override "main")
+  (setq persp-init-new-frame-behaviour-override "main"))
+
+#+end_src
+
 *** Custom Keybindings
 
 #+begin_src emacs-lisp
