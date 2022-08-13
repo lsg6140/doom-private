@@ -804,6 +804,21 @@ causes conflict in syncing files between linux and mac.
 
 #+end_src
 
+**** company-math
+
+#+begin_src emacs-lisp
+
+(use-package! company-math
+  :config
+  (defun my/latex-mode-setup ()
+    (interactive)
+    (setq-local company-backends
+                (append '((company-math-symbols-latex company-latex-commands))
+                        company-backends)))
+  )
+
+#+end_src
+
 *** Whitespace
 
 #+begin_src emacs-lisp
@@ -1035,9 +1050,12 @@ https://github.com/doomemacs/doomemacs/issues/1949
 
 #+begin_src emacs-lisp
 
+(defun get-current-workspace-name()
+  (safe-persp-name (get-current-persp)))
+
 (after! persp-mode
-  (setq persp-interactive-init-frame-behaviour-override "main")
-  (setq persp-init-new-frame-behaviour-override "main"))
+  (setq persp-interactive-init-frame-behaviour-override #'get-current-workspace-name)
+  (setq persp-init-new-frame-behaviour-override #'get-current-workspace-name))
 
 #+end_src
 

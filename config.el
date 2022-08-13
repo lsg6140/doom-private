@@ -234,6 +234,15 @@
       "<S-return>" #'company-complete
 )
 
+(use-package! company-math
+  :config
+  (defun my/latex-mode-setup ()
+    (interactive)
+    (setq-local company-backends
+                (append '((company-math-symbols-latex company-latex-commands))
+                        company-backends)))
+  )
+
 (use-package! whitespace
   :custom (whitespace-style '(face tabs trailing
                               space-before-tab
@@ -342,9 +351,12 @@
 (after! persp-mode
   (setq persp-emacsclient-init-frame-behaviour-override "main"))
 
+(defun get-current-workspace-name()
+  (safe-persp-name (get-current-persp)))
+
 (after! persp-mode
-  (setq persp-interactive-init-frame-behaviour-override "main")
-  (setq persp-init-new-frame-behaviour-override "main"))
+  (setq persp-interactive-init-frame-behaviour-override #'get-current-workspace-name)
+  (setq persp-init-new-frame-behaviour-override #'get-current-workspace-name))
 
 (map! :leader
       "r" #'rg-menu
