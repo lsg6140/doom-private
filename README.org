@@ -798,10 +798,9 @@ causes conflict in syncing files between linux and mac.
       "<tab>"      #'company-select-common-or-cycle
       "RET"        nil
       "<return>"   nil
-      "S-RET"      #'company-complete
-      "<S-return>" #'company-complete
+      "C-RET"      #'company-complete
+      "<C-return>" #'company-complete
 )
-
 #+end_src
 
 **** company-math

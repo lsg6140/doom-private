@@ -230,8 +230,8 @@
       "<tab>"      #'company-select-common-or-cycle
       "RET"        nil
       "<return>"   nil
-      "S-RET"      #'company-complete
-      "<S-return>" #'company-complete
+      "C-RET"      #'company-complete
+      "<C-return>" #'company-complete
 )
 
 (use-package! company-math
