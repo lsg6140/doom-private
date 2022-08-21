@@ -1,5 +1,5 @@
 #+title: DOOM Emacs Configuration
-#+author: JJ Kim
+#+author: Soogwan Lee
 #+description: A Doom Emacs Configuration
 #+startup: fold
 #+property: header-args:emacs-lisp :tangle yes :comments no
@@ -384,15 +384,15 @@ yaml              ; JSON, but readable
 
 #+begin_src emacs-lisp
 
-(setq user-full-name "JJ Kim"
-      user-mail-address "jj@haedosa.xyz")
+(setq user-full-name "Soogwan Lee"
+      user-mail-address "lsg6140@haedosa.xyz")
 
 #+end_src
 ** Hangul
 
 #+begin_src emacs-lisp
 
-(setq default-input-method "korean-hangul3f")
+(setq default-input-method "korean-hangul")
 
 #+end_src
 
