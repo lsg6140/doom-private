@@ -342,10 +342,12 @@
 
 (map! :after vterm
       :map vterm-mode-map
-      :ni "C-j" #'vterm-send-down
-      :ni "C-k" #'vterm-send-up
-      :ni "C-r" #'vterm-send-C-r
-      :ni "C-t" #'vterm-send-C-t
+      :ni "C-j"    #'vterm-send-down
+      :ni "<down>" #'vterm-send-down
+      :ni "<up>"   #'vterm-send-up
+      :ni "C-k"    #'vterm-send-up
+      :ni "C-r"    #'vterm-send-C-r
+      :ni "C-t"    #'vterm-send-C-t
       )
 
 (after! persp-mode
